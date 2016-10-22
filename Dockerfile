@@ -1,5 +1,5 @@
 ## Dockerfile for compilation environment : C/C++ and make
-FROM dgricci/jessie:0.0.2
+FROM dgricci/jessie:0.0.3
 MAINTAINER Didier Richard <didier.richard@ign.fr>
 
 # g++, gcc and company !
