@@ -1,21 +1,9 @@
 ## Dockerfile for compilation environment : C/C++ and make
-FROM dgricci/jessie:0.0.3
+FROM dgricci/jessie:0.0.4
 MAINTAINER Didier Richard <didier.richard@ign.fr>
 
-# g++, gcc and company !
-RUN \
-    apt-get -qy update && \
-    apt-get install -qy --no-install-recommends \
-        gcc \
-        g++ \
-        libc6-dev \
-        autoconf \
-        automake \
-        bison \
-        flex \
-        libtool \
-        gettext \
-        make \
-        cmake \
-    && rm -rf /var/lib/apt/lists/*
+COPY install.sh /usr/local/bin/01-install.sh
+COPY uninstall.sh /usr/local/bin/01-uninstall.sh
+
+CMD ["/usr/local/bin/01-install.sh"]
 
